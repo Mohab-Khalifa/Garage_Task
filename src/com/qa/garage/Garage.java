@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Garage {
 
-	public ArrayList<Vehicle> garageList;
+	private ArrayList<Vehicle> garageList;
 
 	// Adding vehicles to garage
 	public void addVehicle(Vehicle vehicle) {
