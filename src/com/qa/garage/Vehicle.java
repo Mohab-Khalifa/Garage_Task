@@ -1,6 +1,6 @@
 package com.qa.garage;
 
-// Parent Class
+//Parent Class
 public class Vehicle {
 
 	// Fields
