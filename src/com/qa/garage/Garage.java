@@ -31,12 +31,46 @@ public class Garage {
 	public void removeVehicle(Vehicle vehicle) {
 		garageList.remove(vehicle);
 	}
+	
+	// Removing vehicle by id from garage
+	public Vehicle removeVehicleById(int id) {
+		for (int i = garageList.size()-1; i >= 0; i--) {
+			Vehicle currentVehicle = garageList.get(i);
+			int vehicleId = currentVehicle.getId();
+
+			if (vehicleId == id) {
+				garageList.remove(i);
+				return currentVehicle;
+			}
+		}
+		return null;
+	}
 
 	// Removing vehicles by it's type
-	public void removeVehicleByType() {
+	public Vehicle removeVehicleByType(Class<?> cls) {
 		for (int i = 0; i < garageList.size(); i++) {
-			// unsure
+			Vehicle currentVehicle = garageList.get(i);
+//			int vehicleId = currentVehicle.getId();
+			
+			if (cls.isInstance(currentVehicle)) {
+				garageList.remove(i);
+				return currentVehicle;
+			}
 		}
+		return null;
+	}
+	
+	// removing all vehicle by a type
+	public Vehicle removeAllVehiclesByType(Class<?> cls) {
+		for (int i = 0; i < garageList.size(); i++) {
+			Vehicle currentVehicle = garageList.get(i);
+//			int vehicleId = currentVehicle.getId();
+			
+			if (cls.isInstance(currentVehicle)) {
+				garageList.remove(i);
+			} 
+		}
+		return null;
 	}
 
 	// Updating vehicles from garage
